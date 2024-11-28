@@ -1,0 +1,5 @@
+START_PROCESS = 'initiating AT sequence'
+DATA_FETCHED = 'data loading ready'
+DATA_PREPROCESSED = 'data preprocessing complete'
+ML_UPDATED = 'ML model retraining finished'
+GRAPH_PRINTED = 'You are Done! Graph printing to UI finished. You may quit the application'
