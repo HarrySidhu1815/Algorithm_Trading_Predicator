@@ -17,8 +17,8 @@ class GraphPrintingService(EventObserver):
             # Extract the data
             target_1D_predictions = event['target_1D_predictions']
             target_5D_predictions = event['target_5D_predictions']
-            target_1D_original_data = event['target_1D_orginial_data']
-            target_5D_original_data = event['target_5D_orginial_data']
+            target_1D_original_data = event['target_1D_original_data']
+            target_5D_original_data = event['target_5D_original_data']
 
             # Plot graphs and save as image
             graph_path = "output_graph.png"

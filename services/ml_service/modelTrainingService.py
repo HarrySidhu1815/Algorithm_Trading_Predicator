@@ -55,8 +55,8 @@ class ModelTrainingService(EventObserver):
                 'target_1D_predictions': predictions_1D.tolist(),
                 'target_5D_predictions': predictions_5D.tolist(),
                 'original_data': X.to_dict(orient='records'),
-                'target_1D_orginial_data' : test_data[1],
-                'target_5D_orginial_data' : test_data_5D[1],
+                'target_1D_original_data' : test_data[1],
+                'target_5D_original_data' : test_data_5D[1],
             })
 
     def is_interested_in(self, event: Any) -> bool:
