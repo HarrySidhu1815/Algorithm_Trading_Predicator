@@ -4,7 +4,7 @@ import pandas as pd
 from services.data_services.stock import MarketData
 
 
-class DataWarehouse(IDataRepository):
+class MarketDatabaseHandler(IDataRepository):
     def __init__(self, db_uri: str):
         self.client = MongoClient(db_uri)
         self.db = self.client['Stocks']
@@ -14,7 +14,7 @@ class DataWarehouse(IDataRepository):
     #     collection = self.db[symbol]
     #     records = data.to_dict(orient='records')
     #     collection.insert_many(records)
-    #     print(f"[DataWarehouse] Stored data for {symbol} in MongoDB")
+    #     print(f"[MarketDatabaseHandler] Stored data for {symbol} in MongoDB")
 
     def fetch_data(self, symbol: str) -> MarketData:
         """Fetch data from the MongoDB collection and return a Stock instance."""
@@ -27,5 +27,5 @@ class DataWarehouse(IDataRepository):
             data.drop(columns=["_id"], inplace=True)
 
         stock = MarketData(symbol, data)
-        # print(f"[DataWarehouse] Fetched data for {symbol}: {stock}")
+        # print(f"[MarketDatabaseHandler] Fetched data for {symbol}: {stock}")
         return stock

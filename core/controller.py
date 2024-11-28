@@ -1,7 +1,7 @@
 from core.observer import EventPublisher
 from services.data_services.data_fetching_service import DataFetchingService
 from services.data_services.data_preprocessing_service import DataPreprocessingService
-from services.data_services.DataWarehouse import DataWarehouse
+from services.data_services.MarketDatabaseHandler import MarketDatabaseHandler
 from services.ml_service.modelTrainingService import ModelTrainingService
 from services.ml_service.MLModel import MLModel
 from services.prediction_graph_service.graph_printing_service import GraphPrintingService
@@ -20,7 +20,7 @@ class Relay():
 
     def start_process(self):
         stock_symbol = self.gui.get_stock_selection()
-        repository = DataWarehouse("mongodb+srv://Anmol:Anmol22g@stocks.cf9te.mongodb.net/Stocks?retryWrites=true&w=majority&ssl=true")
+        repository = MarketDatabaseHandler("mongodb+srv://Anmol:Anmol22g@stocks.cf9te.mongodb.net/Stocks?retryWrites=true&w=majority&ssl=true")
         
         model = MLModel()
         data_fetching_service = DataFetchingService(repository, self.publisher)
