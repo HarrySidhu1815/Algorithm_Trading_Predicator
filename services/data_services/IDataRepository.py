@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import pandas as pd
-from services.data_services.stock import MarketData
+from services.data_services.market_data import MarketData
 
 class IDataRepository(ABC):
     # @abstractmethod

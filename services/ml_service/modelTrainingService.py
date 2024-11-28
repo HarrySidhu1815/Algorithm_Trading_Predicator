@@ -2,7 +2,7 @@ from typing import Any, Dict, Tuple
 import pandas as pd
 import numpy as np
 import xgboost as xgb
-from services.data_services.stock import MarketData
+from services.data_services.market_data import MarketData
 from core.observer import EventObserver, EventPublisher
 from services.ml_service.MLModel import MLModel
 from services.data_services.IDataRepository import IDataRepository
