@@ -1,0 +1,59 @@
+/* styles.qss */
+
+QMainWindow {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+#stockDropdown {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#stockDropdown QAbstractItemView {
+    background-color: white;
+    border: 1px solid #aaa;
+}
+
+#startProcess{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px 20px;
+    max-width: 500px;
+}
+
+#startProcess:hover{
+    background-color: #45a049;
+}
+
+#startProcess:pressed{
+    background-color: #367b3f;
+}
+
+#graph{
+    font-size: 14px;
+    color: gray;
+    border: 1px dashed #ccc;
+    min-height: 400px;
+    min-width: 800px;
+    background-color: #f0f0f0;
+}
+
+#mainHeading{
+    font-size: 40px;
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+
+#paragraph{
+    font-size: 16px;
+    color: gray;
+}

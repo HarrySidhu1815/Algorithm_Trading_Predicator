@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QApplication
 from ui.gui import MainWindow
 
 
-WIN_WIDTH = 800
+WIN_WIDTH = 1000
 WIN_HEIGHT = 500
 
 
