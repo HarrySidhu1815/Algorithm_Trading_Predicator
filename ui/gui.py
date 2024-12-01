@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QComboBox, QLabel
+from PySide6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QComboBox, QLabel, QTextEdit
 from core.controller import Relay
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import QFileSystemWatcher, Qt
@@ -45,6 +45,12 @@ class MainWindow(QMainWindow):
         button.clicked.connect(self.start_process)
         layout.addWidget(button, alignment=Qt.AlignHCenter)
         
+        # Logging area
+        self.log_area = QTextEdit()
+        self.log_area.setReadOnly(True)
+        self.log_area.setObjectName("logArea")
+        layout.addWidget(self.log_area)
+        
         # Graph placeholder
         self.graph_label = QLabel("Graph will appear here")
         self.graph_label.setScaledContents(True)
@@ -71,6 +77,10 @@ class MainWindow(QMainWindow):
 
     def display_graph(self, graph_path):
         self.graph_label.setPixmap(QPixmap(graph_path))
+    
+    def log_message(self, message: str):
+        # Update the logging area with a new message.
+        self.log_area.append(message)
         
     def apply_styles(self):
         try:

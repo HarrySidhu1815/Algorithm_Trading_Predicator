@@ -16,7 +16,7 @@ connection_string = os.getenv("MONGO_URI")
 class Relay():
     def __init__(self, window):
         self.gui = window
-        self.publisher = EventPublisher()
+        self.publisher = EventPublisher(self.gui.log_message)
 
     def start_process(self):
         stock_symbol = self.gui.get_stock_selection()
