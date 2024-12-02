@@ -42,12 +42,8 @@ class GraphPrintingService(EventObserver):
     def is_interested_in(self, event: Any) -> bool:
         return event.get('type') == 'ML_UPDATED'
 
-    def plot_graph(
-        self, original_1D, predicted_1D, original_5D, predicted_5D, save_path, title
-    ):
-        """
-        Plot a combined graph comparing original and predicted values for 1D and 5D.
-        """
+    def plot_graph(self, original_1D, predicted_1D, original_5D, predicted_5D, save_path, title):
+        # Plot a combined graph comparing original and predicted values for 1D and 5D.
         plt.figure(figsize=(12, 6))
 
         # Subplot for 1D predictions
@@ -61,8 +57,8 @@ class GraphPrintingService(EventObserver):
 
         # Subplot for 5D predictions
         plt.subplot(1, 2, 2)
-        plt.plot(original_5D, label="Original 5D", color="green", marker="o")
-        plt.plot(predicted_5D, label="Predicted 5D", color="red", linestyle="--", marker="x")
+        plt.plot(original_5D, label="Original 5D", color="green")
+        plt.plot(predicted_5D, label="Predicted 5D", color="red", linestyle="--")
         plt.title("5D Predictions")
         plt.xlabel("Time Steps")
         plt.ylabel("Target Value")

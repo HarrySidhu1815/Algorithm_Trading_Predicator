@@ -39,7 +39,7 @@ class DataFetchingService(EventObserver):
         return event.get('type') == events.START_PROCESS
 
     def fetch_treasury_data(self) -> pd.DataFrame:
-        """Fetch treasury bond data."""
+        # Fetch treasury bond data.
         print("[DataFetchingService] Fetching treasury bond data")
         twovx = self.repository.fetch_data('2YearTreasuryBond')  # 2-year bond
         fvx = self.repository.fetch_data('5yearTreasuryBond')      # 5-year bond
@@ -56,7 +56,7 @@ class DataFetchingService(EventObserver):
         return treasury_data
 
     def fetch_indices_data(self) -> pd.DataFrame:
-        """Fetch stock indices data."""
+        # Fetch stock indices data.
         print("[DataFetchingService] Fetching indices data")
         dow_jones = self.repository.fetch_data('DowJones')  # Dow Jones Index
         nasdaq = self.repository.fetch_data('NASDAQ')       # Nasdaq Index
@@ -74,7 +74,7 @@ class DataFetchingService(EventObserver):
         return indices_data
 
     def fetch_commodities_data(self) -> pd.DataFrame:
-        """Fetch commodities data."""
+        # Fetch commodities data.
         print("[DataFetchingService] Fetching commodities data")
         gold = self.repository.fetch_data('PriceOfGold')  # Gold price
         oil = self.repository.fetch_data('PriceOfCrudeOil')    # Oil price

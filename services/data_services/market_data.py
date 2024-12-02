@@ -2,11 +2,10 @@ import pandas as pd
 
 class MarketData:
     def __init__(self, symbol: str, data: list):
-        """
-        Initialize a MarketData object.
-        :param symbol: MarketData symbol (e.g., 'AAPL', 'GOOG').
-        :param data: List of historical data dictionaries.
-        """
+        # Initialize a MarketData object.
+        # :param symbol: MarketData symbol (e.g., 'AAPL', 'GOOGL').
+        # :param data: List of historical data dictionaries.
+        
         self.symbol = symbol
         self.data = pd.DataFrame(data)
 

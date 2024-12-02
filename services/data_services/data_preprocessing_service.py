@@ -41,13 +41,11 @@ class DataPreprocessingService(EventObserver):
     
 
     def preprocess_data(self, data: pd.DataFrame) -> dict:
-        """
-        Perform preprocessing steps:
-        - Extract time variables
-        - Create target variables
-        - Scale numerical data
-        - Handle missing values
-        """
+        # Perform preprocessing steps:
+        # - Extract time variables
+        # - Create target variables
+        # - Scale numerical data
+        # - Handle missing values
         print(f"[DataPreprocessingService] Starting data preprocessing")
 
         # Ensure the Date column is in datetime format
